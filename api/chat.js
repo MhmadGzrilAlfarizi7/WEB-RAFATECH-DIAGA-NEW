@@ -1,23 +1,8 @@
 ﻿/**
  * DIAGA — API Serverless: /api/chat
  * Vercel Functions (Node.js)
- *
- * Alur:
- * 1. Validasi input (maks 500 karakter)
- * 2. Rate limit sederhana per IP (via header)
- * 3. Cek konteks dari knowledge base
- * 4. Jika ada konteks → panggil AI (Anthropic / Gemini via adapter)
- * 5. Jika tidak ada → balas "data tidak cukup"
- *
- * Env vars:
- *   AI_PROVIDER: 'anthropic' | 'gemini' (default: anthropic)
- *   AI_API_KEY: kunci API
- *   AI_MODEL: nama model (default: claude-3-haiku-20240307 / gemini-1.5-flash)
- *
- * Tidak menyimpan log percakapan.
  */
 
-// Rate limit sederhana in-memory (reset saat cold start)
 const rateLimitMap = new Map();
 const RATE_LIMIT_MAX = 20;     // maks 20 request per IP per window
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 menit
@@ -37,18 +22,17 @@ function checkRateLimit(ip) {
   return entry.count <= RATE_LIMIT_MAX;
 }
 
-// System prompt — bahasa Indonesia, berbasis konteks
-const SYSTEM_PROMPT = `Kamu adalah Pemandu Kaganga, asisten untuk DIAGA (Digitalisasi Aksara Kaganga).
+// System prompt — ramah, luwes, dan berbasis konteks
+const SYSTEM_PROMPT = `Kamu adalah Pemandu Kaganga, asisten ramah untuk DIAGA (Digitalisasi Aksara Kaganga).
 
 Aturan WAJIB:
-1. Bersikaplah ramah, sopan, dan luwes. Kamu boleh merespon basa-basi pengguna secara natural sebelum masuk ke topik utama.
-2. UTAMAKAN menjawab menggunakan informasi dari [KONTEKS]. Tandai sumber dengan [1], [2], dst. jika menggunakan data konteks.
-3. Jika pertanyaan pengguna berada di luar konteks atau konteks kurang lengkap, kamu diperbolehkan melengkapinya menggunakan pengetahuan umum yang relevan seputar kebudayaan, sejarah, dan masyarakat Bengkulu secara akurat.
+1. Bersikaplah ramah, sopan, dan luwes. Kamu boleh merespon basa-basi atau sapaan pengguna secara natural.
+2. UTAMAKAN menjawab menggunakan informasi dari [KONTEKS] jika tersedia. Tandai sumber dengan [1], [2], dst.
+3. Jika [KONTEKS] kosong, kurang lengkap, atau pertanyaan berada di luar konteks, kamu diperbolehkan melengkapinya menggunakan pengetahuan umum yang relevan seputar kebudayaan, sejarah, dan masyarakat Bengkulu secara akurat.
 4. JANGAN menebak tahun, nama, atau makna yang secara eksplisit bertentangan dengan konteks.
 5. JANGAN menghasilkan karakter aksara secara mandiri – hanya jelaskan informasi tentang aksara.
 6. Arahkan percakapan kembali ke topik aksara, batik, atau budaya Rejang/Bengkulu secara halus dan bersahabat.
-7. Jika konteks menandai "belum terverifikasi", sampaikan itu kepada pengguna dengan bahasa yang santai.
-8. Jawab dengan gaya percakapan yang alami (maks 200 kata) dalam Bahasa Indonesia.;
+7. Jawab dengan gaya percakapan yang alami (maks 200 kata) dalam Bahasa Indonesia.`;
 
 export default async function handler(req, res) {
   // CORS
@@ -81,12 +65,10 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Pesan terlalu panjang (maks 500 karakter).' });
   }
 
-  if (!konteks || typeof konteks !== 'string' || konteks.trim().length < 10) {
-    return res.status(200).json({
-      jawaban: 'Saya belum punya data yang cukup tentang itu. Untuk informasi lebih lanjut, ' +
-        'coba tanya langsung ke pengrajin di Arumbatik Roemah atau lembaga budaya setempat.',
-    });
-  }
+  // Siapkan konteks teks (jika kosong, beritahu AI bahwa konteks lokal tidak ada)
+  const konteksBersih = (konteks && typeof konteks === 'string' && konteks.trim().length >= 10)
+    ? konteks.trim()
+    : 'Tidak ada konteks khusus dari database lokal.';
 
   // Escape input
   const pesanAman = pesan.replace(/[<>]/g, '');
@@ -104,9 +86,9 @@ export default async function handler(req, res) {
     let jawaban;
 
     if (provider === 'anthropic') {
-      jawaban = await panggilAnthropic(pesanAman, konteks, apiKey, model);
+      jawaban = await panggilAnthropic(pesanAman, konteksBersih, apiKey, model);
     } else if (provider === 'gemini') {
-      jawaban = await panggilGemini(pesanAman, konteks, apiKey, model);
+      jawaban = await panggilGemini(pesanAman, konteksBersih, apiKey, model);
     } else {
       return res.status(500).json({ error: 'Provider AI tidak dikenali.' });
     }
