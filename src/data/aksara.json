@@ -1,0 +1,71 @@
+﻿{
+  "_meta": {
+    "versi": "1.0.0",
+    "catatan": "Data aksara Rejang Unicode U+A930-A95F. Ejaan sedang divalidasi bersama narasumber.",
+    "sumber": "Unicode Standard 6.0 (Rejang block); wikipedia.org/wiki/Rejang_script",
+    "terverifikasi": false,
+    "todo": "Validasi ejaan dan contoh kata dengan narasumber adat Rejang Lebong"
+  },
+  "huruf": [
+    { "kode": "A930", "char": "\uA930", "latin": "ka", "bunyi": "Ka seperti kata kala", "kategori": "huruf" },
+    { "kode": "A931", "char": "\uA931", "latin": "ga", "bunyi": "Ga seperti kata gajah", "kategori": "huruf" },
+    { "kode": "A932", "char": "\uA932", "latin": "nga", "bunyi": "Nga seperti kata nganga", "kategori": "huruf" },
+    { "kode": "A933", "char": "\uA933", "latin": "ta", "bunyi": "Ta seperti kata tala", "kategori": "huruf" },
+    { "kode": "A934", "char": "\uA934", "latin": "da", "bunyi": "Da seperti kata dara", "kategori": "huruf" },
+    { "kode": "A935", "char": "\uA935", "latin": "na", "bunyi": "Na seperti kata naga", "kategori": "huruf" },
+    { "kode": "A936", "char": "\uA936", "latin": "pa", "bunyi": "Pa seperti kata padi", "kategori": "huruf" },
+    { "kode": "A937", "char": "\uA937", "latin": "ba", "bunyi": "Ba seperti kata batu", "kategori": "huruf" },
+    { "kode": "A938", "char": "\uA938", "latin": "ma", "bunyi": "Ma seperti kata madu", "kategori": "huruf" },
+    { "kode": "A939", "char": "\uA939", "latin": "ca", "bunyi": "Ca seperti kata cakra", "kategori": "huruf" },
+    { "kode": "A93A", "char": "\uA93A", "latin": "ja", "bunyi": "Ja seperti kata jala", "kategori": "huruf" },
+    { "kode": "A93B", "char": "\uA93B", "latin": "nya", "bunyi": "Nya seperti kata nyala", "kategori": "huruf" },
+    { "kode": "A93C", "char": "\uA93C", "latin": "sa", "bunyi": "Sa seperti kata satu", "kategori": "huruf" },
+    { "kode": "A93D", "char": "\uA93D", "latin": "ra", "bunyi": "Ra seperti kata raja", "kategori": "huruf" },
+    { "kode": "A93E", "char": "\uA93E", "latin": "la", "bunyi": "La seperti kata laut", "kategori": "huruf" },
+    { "kode": "A93F", "char": "\uA93F", "latin": "ya", "bunyi": "Ya seperti kata yakin", "kategori": "huruf" },
+    { "kode": "A940", "char": "\uA940", "latin": "wa", "bunyi": "Wa seperti kata waja", "kategori": "huruf" },
+    { "kode": "A941", "char": "\uA941", "latin": "ha", "bunyi": "Ha seperti kata hari", "kategori": "huruf" },
+    { "kode": "A942", "char": "\uA942", "latin": "mba", "bunyi": "Mba — onset konsonan rangkap mb", "kategori": "huruf" },
+    { "kode": "A943", "char": "\uA943", "latin": "ngga", "bunyi": "Ngga — onset konsonan rangkap ngg", "kategori": "huruf" },
+    { "kode": "A944", "char": "\uA944", "latin": "nda", "bunyi": "Nda — onset konsonan rangkap nd", "kategori": "huruf" },
+    { "kode": "A945", "char": "\uA945", "latin": "nyja", "bunyi": "Nyja — onset konsonan rangkap nyj", "kategori": "huruf" },
+    { "kode": "A946", "char": "\uA946", "latin": "a", "bunyi": "A murni, dipakai di awal kata bervokal", "kategori": "huruf" }
+  ],
+  "tandaVokal": [
+    { "kode": "A947", "char": "\uA947", "latin": "i", "bunyi": "Vokal i", "kategori": "vokal" },
+    { "kode": "A948", "char": "\uA948", "latin": "u", "bunyi": "Vokal u", "kategori": "vokal" },
+    { "kode": "A949", "char": "\uA949", "latin": "e", "bunyi": "Vokal e (pepet)", "kategori": "vokal", "catatan": "Perlu validasi: e pepet vs e taleng" },
+    { "kode": "A94A", "char": "\uA94A", "latin": "ai", "bunyi": "Diftong ai", "kategori": "vokal" },
+    { "kode": "A94B", "char": "\uA94B", "latin": "o", "bunyi": "Vokal o", "kategori": "vokal" },
+    { "kode": "A94C", "char": "\uA94C", "latin": "au", "bunyi": "Diftong au", "kategori": "vokal" },
+    { "kode": "A94D", "char": "\uA94D", "latin": "eu", "bunyi": "Vokal eu", "kategori": "vokal" },
+    { "kode": "A94E", "char": "\uA94E", "latin": "ea", "bunyi": "Diftong ea", "kategori": "vokal" }
+  ],
+  "tandaKonsonanAkhir": [
+    { "kode": "A94F", "char": "\uA94F", "latin": "ng", "bunyi": "Konsonan akhir ng", "kategori": "coda" },
+    { "kode": "A950", "char": "\uA950", "latin": "n", "bunyi": "Konsonan akhir n", "kategori": "coda" },
+    { "kode": "A951", "char": "\uA951", "latin": "r", "bunyi": "Konsonan akhir r", "kategori": "coda" },
+    { "kode": "A952", "char": "\uA952", "latin": "h", "bunyi": "Konsonan akhir h", "kategori": "coda" }
+  ],
+  "virama": {
+    "kode": "A953",
+    "char": "\uA953",
+    "fungsi": "Virama — mematikan vokal inheren; dipakai untuk konsonan akhir yang tidak punya tanda khusus"
+  },
+  "onsetGanda": [
+    { "latin": "ngg", "huruf": "A943", "catatan": "Greedy — harus dicek sebelum ng" },
+    { "latin": "mb", "huruf": "A942", "catatan": "Greedy — harus dicek sebelum m" },
+    { "latin": "nd", "huruf": "A944", "catatan": "Greedy — harus dicek sebelum n" },
+    { "latin": "ny", "huruf": "A93B", "catatan": "Greedy — harus dicek sebelum n" },
+    { "latin": "ng", "huruf": "A932", "catatan": "Greedy — harus dicek sebelum n" },
+    { "latin": "nyj", "huruf": "A945", "catatan": "Greedy — harus dicek sebelum ny dan n" }
+  ],
+  "konsonanTanpaPadanan": ["f", "v", "z", "x", "q"],
+  "penggantiDefault": {
+    "f": "p",
+    "v": "b",
+    "z": "s",
+    "x": "k",
+    "q": "k"
+  }
+}

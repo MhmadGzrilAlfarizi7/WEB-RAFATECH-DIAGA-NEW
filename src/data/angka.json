@@ -1,0 +1,109 @@
+{
+ "_catatan": "Bentuk angka digambar ulang sebagai SVG dari gambar angka 1-10 yang diberikan tim (Unicode tidak punya karakter angka Rejang, jadi tidak bisa dipakai font). Koordinat viewBox 0 0 160 150. Sumber dan validasi: belum.",
+ "viewBox": "0 0 160 150",
+ "tebal": 6.5,
+ "angka": [
+  {
+   "angka": 1,
+   "nama": "satu",
+   "bentuk": "Satu goresan tegak yang sedikit miring.",
+   "paths": [
+    "M83.6 28.2L78.2 114.7"
+   ]
+  },
+  {
+   "angka": 2,
+   "nama": "dua",
+   "bentuk": "Dua goresan tegak yang sejajar.",
+   "paths": [
+    "M59.3 33.3L64.7 114.7",
+    "M99.9 39.3L102.6 114.7"
+   ]
+  },
+  {
+   "angka": 3,
+   "nama": "tiga",
+   "bentuk": "Tiga goresan tegak yang sejajar.",
+   "paths": [
+    "M40.3 33.3L45.7 114.7",
+    "M80.9 33.3L83.7 114.7",
+    "M121.5 39.3L121.5 114.7"
+   ]
+  },
+  {
+   "angka": 4,
+   "nama": "empat",
+   "bentuk": "Dua goresan tegak yang panjang, dengan dua goresan pendek sejajar di atasnya.",
+   "paths": [
+    "M62 14.3L62 35.7",
+    "M100 14.3L100 35.7",
+    "M61.9 55.3L64.7 124.8",
+    "M99.9 55.3L102.5 124.8"
+   ]
+  },
+  {
+   "angka": 5,
+   "nama": "lima",
+   "bentuk": "Satu garis datar dengan satu garis tegak di tengah bawahnya, seperti huruf T.",
+   "paths": [
+    "M21.3 60.5L139.7 60.5",
+    "M81 60.5L81 135.7"
+   ]
+  },
+  {
+   "angka": 6,
+   "nama": "enam",
+   "bentuk": "Garis datar dengan garis tegak yang bergeser ke kiri, ditambah satu goresan pendek di sisi kanan bawah.",
+   "paths": [
+    "M21.3 60.5L139.7 60.5",
+    "M62 60.5L62 135.7",
+    "M111 99.3L111 135.7"
+   ]
+  },
+  {
+   "angka": 7,
+   "nama": "tujuh",
+   "bentuk": "Garis datar dengan tiga garis tegak di bawahnya: satu panjang di tengah, dua pendek di kiri dan kanan.",
+   "paths": [
+    "M21.3 60.5L139.7 60.5",
+    "M81 60.5L81 135.7",
+    "M43 93.3L43 130.7",
+    "M119 93.3L119 130.7"
+   ]
+  },
+  {
+   "angka": 8,
+   "nama": "delapan",
+   "bentuk": "Bentuk angka tujuh, ditambah satu goresan pendek di atas garis datar.",
+   "paths": [
+    "M81 17.3L81 43.7",
+    "M21.3 60.5L139.7 60.5",
+    "M81 60.5L81 135.7",
+    "M43 93.3L43 130.7",
+    "M119 93.3L119 130.7"
+   ]
+  },
+  {
+   "angka": 9,
+   "nama": "sembilan",
+   "bentuk": "Bentuk angka tujuh, ditambah dua goresan pendek di atas garis datar.",
+   "paths": [
+    "M62 17.3L62 43.7",
+    "M100 17.3L100 43.7",
+    "M21.3 60.5L139.7 60.5",
+    "M81 60.5L81 135.7",
+    "M43 93.3L43 130.7",
+    "M119 93.3L119 130.7"
+   ]
+  },
+  {
+   "angka": 10,
+   "nama": "sepuluh",
+   "bentuk": "Lengkung tertutup seperti tetesan atau huruf d, dengan satu goresan tegak panjang yang menembus sisi kanannya.",
+   "paths": [
+    "M118.1 92.2C116.4 94 111.2 99.6 108 103C104.8 106.4 102.3 109.7 98.8 112.5C95.3 115.3 91.1 118.1 87 119.8C82.9 121.4 78.3 122.4 74 122.5C69.7 122.5 64.8 121.9 61 120.1C57.2 118.4 53.2 115.4 51.2 111.8C49.2 108.3 48.5 103.3 49 99C49.5 94.7 51.7 90 54.1 86C56.4 82 59.8 78.4 63.1 75.3C66.4 72.1 70.2 69.3 74 67C77.8 64.6 81.8 62.8 86 61.2C90.2 59.5 94.3 58 99 56.9C103.7 55.9 110.5 55.4 114 55C117.5 54.6 118.9 54.7 119.9 54.6",
+    "M122 15.5L116.5 131"
+   ]
+  }
+ ]
+}

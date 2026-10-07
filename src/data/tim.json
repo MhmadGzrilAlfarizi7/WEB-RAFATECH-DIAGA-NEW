@@ -1,0 +1,24 @@
+{
+  "_petunjuk": "Foto taruh di public/assets/images/tim/ (persegi, minimal 300x300, wajah di tengah). Slot yang namanya kosong tidak ditampilkan. Syarat lomba: maksimal 3 anggota dari universitas yang sama. Pembimbing ditulis terpisah.",
+  "anggota": [
+    {
+      "nama": "Karel Desvalyudho",
+      "peran": "Ketua Tim",
+      "kampus": "Universitas Bengkulu · Teknik Informatika",
+      "foto": "/assets/images/tim/karel-desvalyudho.webp"
+    },
+    {
+      "nama": "Muhamad Gazril Alfarizi",
+      "peran": "Anggota Tim",
+      "kampus": "Universitas Bengkulu · Teknik Informatika",
+      "foto": "/assets/images/tim/muhamad-gazril-alfarizi.webp"
+    },
+    {
+      "nama": "Ignes Puspa Lestari",
+      "peran": "Anggota Tim",
+      "kampus": "Universitas Bengkulu · Teknik Informatika",
+      "foto": "/assets/images/tim/ignes-puspa-lestari.webp"
+    }
+  ],
+  "pembimbing": { "nama": "", "keterangan": "" }
+}

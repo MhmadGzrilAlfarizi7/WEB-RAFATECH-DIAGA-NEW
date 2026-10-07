@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang DIAGA — Aksara Kaganga, Tim, dan Batasan Kami</title>
+  <meta name="description" content="Tentang DIAGA: situs belajar Aksara Kaganga, masalah yang ingin dijawab, tim di baliknya, serta sumber dan batasan yang kami akui.">
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <main id="main-content">
+
+    <div class="page-hero">
+      <p style="color:var(--c-emerald);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;margin-bottom:.75rem;">Tentang Kami</p>
+      <h1 class="page-hero-title">Tentang DIAGA</h1>
+      <p class="page-hero-sub">Museum digital untuk belajar Aksara Kaganga, melihatnya hidup di batik, dan bertemu perajinnya.</p>
+    </div>
+
+    <section class="section" aria-labelledby="apa-title">
+      <div class="about-wrap">
+
+        <!-- Apa itu DIAGA -->
+        <div class="about-block fade-up">
+          <h2 class="about-h" id="apa-title">Apa itu DIAGA</h2>
+          <p class="about-p">
+            DIAGA, kependekan dari Digitalisasi Aksara Kaganga, adalah situs belajar yang kami buat untuk mengenalkan
+            aksara tradisional Suku Rejang dari Bengkulu. Di sini kamu bisa mengenali hurufnya, mengubah kata Latin
+            menjadi aksara, bertanya ke Pemandu AI, lalu melihat bagaimana aksara itu dipakai pada batik.
+          </p>
+          <p class="about-p">
+            Situs ini kami susun untuk lomba Web Development RAFATECH 2026 dengan tema
+            <em>APEX: AI Powered Experience for the Web</em>.
+          </p>
+        </div>
+
+        <!-- Masalah -->
+        <div class="about-block fade-up">
+          <h2 class="about-h">Masalah yang ingin kami jawab</h2>
+          <div class="glass about-card">
+            <p class="about-p" style="margin-bottom:.9rem;">
+              Aksara Kaganga makin jarang dipakai, dan sumber belajar yang mudah diakses masih terbatas.
+              Di sisi lain, Batik Kaganga yang memakai aksara ini sebagai motif ikut tertekan. Batik cap yang
+              diproduksi massal menggeser nilai batik tulis tradisional.
+            </p>
+            <p class="about-p" style="margin-bottom:0;">
+              DIAGA mencoba jadi pintu masuk yang ringan: belajar aksara dulu, lalu melihatnya di batik,
+              lalu berkunjung langsung ke perajin.
+            </p>
+          </div>
+        </div>
+
+        <!-- Cara membantu -->
+        <div class="about-block fade-up">
+          <h2 class="about-h">Tiga langkah di DIAGA</h2>
+          <div class="about-grid">
+            <a href="/pages/belajar.html" class="glass about-card" style="text-decoration:none;display:block;">
+              <span class="about-step">1</span>
+              <h3>Belajar aksara</h3>
+              <p>Kenali huruf Kaganga, coba konverter, dan uji ingatanmu lewat kuis.</p>
+            </a>
+            <a href="/pages/batik.html#generator" class="glass about-card" style="text-decoration:none;display:block;">
+              <span class="about-step">2</span>
+              <h3>Tulis namamu di batik</h3>
+              <p>Lihat namamu dalam aksara di atas motif Rafflesia, lalu unduh hasilnya.</p>
+            </a>
+            <a href="/pages/sentra-kreatif.html" class="glass about-card" style="text-decoration:none;display:block;">
+              <span class="about-step">3</span>
+              <h3>Kunjungi perajin</h3>
+              <p>Datangi Arumbatik Roemah di Rejang Lebong untuk belajar membatik langsung.</p>
+            </a>
+          </div>
+          <p class="about-p" style="margin-top:1.25rem;">
+            <a href="/pages/pemandu-ai.html" style="color:var(--c-emerald);">Pemandu AI</a> menemani di setiap langkah
+            dan menjawab pertanyaan seputar aksara, batik, dan budaya Rejang.
+          </p>
+        </div>
+
+        <!-- Tim -->
+        <div class="about-block" id="tim">
+          <h2 class="about-h">Tim kami</h2>
+          <div class="tim-grid" id="timGrid"></div>
+          <p class="tim-mentor" id="timMentor" hidden></p>
+        </div>
+
+        <!-- Cara kerja dan batasan -->
+        <div class="about-block fade-up" id="etika">
+          <h2 class="about-h">Cara kerja dan batasan kami</h2>
+          <div class="about-grid">
+            <div class="glass about-card">
+              <h3>AI yang menjawab dari data</h3>
+              <p>
+                Pemandu AI menjawab dari kumpulan data yang kami susun. Kalau datanya tidak ada, ia mengaku
+                belum tahu. Pertanyaanmu diteruskan ke penyedia layanan AI untuk diproses, dan kami tidak
+                menyimpan riwayat percakapan.
+              </p>
+            </div>
+            <div class="glass about-card">
+              <h3>Ejaan aksara belum divalidasi</h3>
+              <p>
+                Aturan konverter kami susun dari struktur Unicode aksara Rejang dan belum diperiksa narasumber adat.
+                Anggap hasilnya alat bantu belajar, bukan rujukan resmi.
+              </p>
+            </div>
+            <div class="glass about-card">
+              <h3>Motif milik komunitas</h3>
+              <p>
+                Aksara dan motif Rafflesia adalah warisan budaya Suku Rejang. Generator batik di sini hanya untuk
+                belajar dan tidak menggantikan karya perajin. Kalau kamu suka hasilnya, dukung perajin langsung.
+              </p>
+            </div>
+            <div class="glass about-card">
+              <h3>Keterangan foto</h3>
+              <p>
+                Keterangan foto kami tulis sesuai isi gambar, tanpa klaim keaslian yang belum bisa dibuktikan.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sumber -->
+        <div class="about-block fade-up" id="sumber">
+          <h2 class="about-h">Sumber</h2>
+          <div class="glass about-card">
+            <ul>
+              <li>
+                <a href="https://curupkami.blogspot.com/2009/02/batik-kaganga.html" target="_blank" rel="noopener" style="color:var(--c-emerald);">Blog Curup Kami, &ldquo;Batik Kaganga&rdquo; (2009)</a>
+                — dasar cerita sejarah Batik Kaganga.
+              </li>
+              <li>
+                <a href="https://www.unicode.org/charts/PDF/UA930.pdf" target="_blank" rel="noopener" style="color:var(--c-emerald);">Unicode Standard, blok Rejang (U+A930–U+A95F)</a>
+                — dasar kode huruf, tanda vokal, dan tanda konsonan akhir.
+              </li>
+              <li>Font Noto Sans Rejang (lisensi SIL Open Font) untuk menampilkan aksara.</li>
+            </ul>
+            <p style="margin-top:.9rem;">
+              Rujukan tertulis tentang Batik Kaganga masih terbatas. Kami menambah sumber seiring verifikasi dengan narasumber.
+            </p>
+          </div>
+        </div>
+
+        <!-- Rencana -->
+        <div class="about-block fade-up">
+          <h2 class="about-h">Rencana ke depan</h2>
+          <div class="glass about-card">
+            <ul>
+              <li>Memvalidasi aturan konverter bersama narasumber aksara Rejang.</li>
+              <li>Menambah dokumentasi foto dan cerita dari para perajin.</li>
+              <li>Mengenali tulisan tangan aksara (baru rencana, belum dikerjakan).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script type="module" src="/src/pages/tentang.js"></script>
+</body>
+</html>

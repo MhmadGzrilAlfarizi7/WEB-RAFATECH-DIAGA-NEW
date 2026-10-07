@@ -1,0 +1,142 @@
+﻿{
+  "_meta": {
+    "versi": "1.0.0",
+    "catatan": "Knowledge base DIAGA. Entri terverifikasi=false berarti sumber belum dikonfirmasi."
+  },
+  "entri": [
+    {
+      "id": "aksara-umum",
+      "judul": "Aksara Kaganga — Gambaran Umum",
+      "isi": "Aksara Kaganga (juga disebut Aksara Rejang) adalah sistem tulisan tradisional suku Rejang dari wilayah Bengkulu, Sumatera. Aksara ini termasuk dalam keluarga aksara Brahmi rumpun Nusantara, dan telah dikodekan dalam standar Unicode pada blok U+A930-U+A95F (Rejang block) sejak Unicode 5.1.",
+      "kategori": "sejarah",
+      "sumber": [
+        {
+          "label": "Unicode Standard — Rejang Block",
+          "url": "https://www.unicode.org/charts/PDF/UA930.pdf"
+        },
+        {
+          "label": "Wikipedia: Rejang script",
+          "url": "https://en.wikipedia.org/wiki/Rejang_script"
+        }
+      ],
+      "terverifikasi": false,
+      "todo": "Konfirmasi dengan narasumber adat Rejang"
+    },
+    {
+      "id": "batik-kaganga-sejarah",
+      "judul": "Batik Kaganga — Sejarah Singkat",
+      "isi": "Batik Kaganga lahir di Tanah Rejang pada akhir dekade 1980-an, terinspirasi dari gerakan promosi Batik Besurek Bengkulu. Para perajin lokal Rejang Lebong ingin menciptakan identitas batik tersendiri yang memadukan aksara kuno Kaganga dengan motif Bunga Rafflesia Arnoldii, flora endemik terbesar di dunia yang menjadi kebanggaan Bengkulu. Batik ini diciptakan dengan tiga tujuan: menggalakkan kerajinan daerah sebagai sumber ekonomi kreatif, mempopulerkan kembali aksara Kaganga yang semakin langka, dan mempromosikan ikon Rafflesia kepada dunia.",
+      "kategori": "batik",
+      "sumber": [
+        {
+          "label": "Blog Curup Kami, 2009 (sumber tidak terverifikasi)",
+          "url": "https://curupkami.blogspot.com/2009/02/batik-kaganga.html"
+        }
+      ],
+      "terverifikasi": false,
+      "todo": "Cari sumber akademis atau dokumentasi resmi pemerintah daerah"
+    },
+    {
+      "id": "arumbatik-roemah",
+      "judul": "Arumbatik Roemah — Sentra Kreatif",
+      "isi": "Arumbatik Roemah adalah pusat pembelajaran dan produksi Batik Tulis Kaganga di Rejang Lebong. Berlokasi di Jl. Batu Galing No. 41, Curup Tengah, Kabupaten Rejang Lebong, Bengkulu. Di sini pengunjung dapat belajar teknik membatik tulis tradisional dan mengenal makna motif aksara Kaganga.",
+      "kategori": "sentra",
+      "sumber": [],
+      "terverifikasi": false,
+      "todo": "Konfirmasi alamat, jam buka, dan kontak dengan pihak Arumbatik Roemah"
+    },
+    {
+      "id": "huruf-ka",
+      "judul": "Huruf Ka (ꤰ, U+A930)",
+      "isi": "Ka adalah huruf pertama dalam Aksara Kaganga, melambangkan bunyi 'ka'. Kode Unicode: U+A930. Vokal inheren 'a' sudah terkandung dalam huruf ini. Untuk bunyi 'ki', tambahkan tanda vokal i (U+A947). Untuk bunyi 'ku', tambahkan tanda vokal u (U+A948).",
+      "kategori": "huruf",
+      "sumber": [
+        {
+          "label": "Unicode Standard",
+          "url": "https://www.unicode.org/charts/PDF/UA930.pdf"
+        }
+      ],
+      "terverifikasi": true
+    },
+    {
+      "id": "huruf-ga",
+      "judul": "Huruf Ga (ꤱ, U+A931)",
+      "isi": "Ga melambangkan bunyi 'ga', seperti dalam kata 'gajah'. Kode Unicode: U+A931.",
+      "kategori": "huruf",
+      "sumber": [
+        {
+          "label": "Unicode Standard",
+          "url": "https://www.unicode.org/charts/PDF/UA930.pdf"
+        }
+      ],
+      "terverifikasi": true
+    },
+    {
+      "id": "huruf-nga",
+      "judul": "Huruf Nga (ꤲ, U+A932)",
+      "isi": "Nga melambangkan bunyi 'nga', seperti dalam kata 'nganga'. Kode Unicode: U+A932. Hati-hati membedakan dengan 'ngga' (U+A943) yang merupakan onset konsonan rangkap.",
+      "kategori": "huruf",
+      "sumber": [
+        {
+          "label": "Unicode Standard",
+          "url": "https://www.unicode.org/charts/PDF/UA930.pdf"
+        }
+      ],
+      "terverifikasi": true
+    },
+    {
+      "id": "faq-cara-baca",
+      "judul": "Cara Membaca Aksara Kaganga",
+      "isi": "Setiap huruf dalam Aksara Kaganga memiliki vokal inheren 'a'. Artinya, huruf Ka (ꤰ) dibaca 'ka', bukan 'k' saja. Untuk mengubah vokalnya, tambahkan tanda vokal: I (U+A947), U (U+A948), E pepet (U+A949), AI (U+A94A), O (U+A94B), AU (U+A94C). Untuk konsonan akhir ng, n, r, h ada tanda konsonan khusus. Konsonan akhir lain menggunakan Virama (U+A953).",
+      "kategori": "tutorial",
+      "sumber": [
+        {
+          "label": "Unicode Standard",
+          "url": "https://www.unicode.org/charts/PDF/UA930.pdf"
+        }
+      ],
+      "terverifikasi": true
+    },
+    {
+      "id": "faq-rejang-suku",
+      "judul": "Suku Rejang",
+      "isi": "Suku Rejang adalah salah satu suku asli di Provinsi Bengkulu, Sumatera. Mereka memiliki bahasa dan aksara sendiri. Wilayah utama mereka mencakup Kabupaten Rejang Lebong, Lebong, dan Kepahiang. Suku Rejang dikenal sebagai salah satu pemilik aksara tradisional Nusantara yang paling awal terdokumentasi.",
+      "kategori": "budaya",
+      "sumber": [
+        {
+          "label": "Wikipedia: Rejang people",
+          "url": "https://en.wikipedia.org/wiki/Rejang_people"
+        }
+      ],
+      "terverifikasi": false,
+      "todo": "Verifikasi dengan sumber akademis"
+    },
+    {
+      "id": "faq-unicode",
+      "judul": "Blok Unicode Aksara Rejang",
+      "isi": "Aksara Rejang dikodekan dalam Unicode blok U+A930 hingga U+A95F. Blok ini mencakup 23 huruf dasar (A930-A946), 8 tanda vokal (A947-A94E), 4 tanda konsonan akhir (A94F-A952), dan virama (A953). Font yang mendukung blok ini antara lain Noto Sans Rejang dari Google.",
+      "kategori": "teknis",
+      "sumber": [
+        {
+          "label": "Unicode Standard",
+          "url": "https://www.unicode.org/charts/PDF/UA930.pdf"
+        }
+      ],
+      "terverifikasi": true
+    },
+    {
+      "id": "angka-kaganga-1-10",
+      "judul": "Angka Kaganga: bentuk angka (bilangan) 1 sampai 10",
+      "isi": "Dokumentasi tim DIAGA mencatat bentuk angka Kaganga dari 1 sampai 10. Angka 1, 2, dan 3 berupa satu, dua, dan tiga goresan tegak yang sejajar. Angka 4 berupa dua goresan tegak panjang dengan dua goresan pendek sejajar di atasnya. Angka 5 berbentuk garis datar dengan satu garis tegak di tengah bawahnya, seperti huruf T. Angka 6 seperti T dengan garis tegak bergeser ke kiri dan satu goresan pendek di sisi kanan bawah. Angka 7 berbentuk T dengan tiga garis tegak di bawahnya: satu panjang di tengah, dua pendek di kiri dan kanan. Angka 8 adalah bentuk angka 7 ditambah satu goresan pendek di atas garis datar, dan angka 9 adalah bentuk angka 7 ditambah dua goresan pendek di atas garis datar. Angka 10 berbentuk lengkung tertutup seperti tetesan atau huruf d dengan satu goresan tegak panjang yang menembus sisi kanannya. Standar Unicode tidak memiliki karakter angka Rejang, sehingga angka ini ditampilkan sebagai gambar, bukan huruf font. Angka nol dan angka di atas 10 belum kami dokumentasikan.",
+      "kategori": "aksara",
+      "sumber": [
+        {
+          "label": "Dokumentasi tim DIAGA: gambar angka Kaganga 1–10",
+          "url": ""
+        }
+      ],
+      "terverifikasi": false,
+      "todo": "Isi sumber asli gambar angka dan validasi dengan narasumber"
+    }
+  ]
+}

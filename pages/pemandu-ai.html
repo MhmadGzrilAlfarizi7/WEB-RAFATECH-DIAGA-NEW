@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemandu Kaganga AI — DIAGA</title>
+  <meta name="description" content="Tanyakan tentang Aksara Kaganga, batik, dan budaya Rejang Bengkulu. Dijawab AI dari data kurasi — sumber ditampilkan, tidak mengarang fakta.">
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <main id="main-content">
+
+    <div class="page-hero">
+      <p style="color:var(--c-emerald);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;margin-bottom:.75rem;">Pemandu AI</p>
+      <h1 class="page-hero-title">Pemandu Kaganga</h1>
+      <p class="page-hero-sub">
+        Pertanyaanmu dijawab dari knowledge base yang dikurasi, bukan dari halusinasi.
+        Sumber setiap jawaban ditampilkan di bawahnya.
+      </p>
+    </div>
+
+    <section class="section" id="chat" aria-labelledby="chat-title">
+      <div class="section-inner" style="max-width:700px;">
+
+        <!-- Keterangan jujur -->
+        <div class="glass fade-up" style="border-radius:14px;padding:1rem 1.5rem;margin-bottom:1.5rem;border-color:rgba(0,232,123,.15);">
+          <p style="color:var(--c-text-muted);font-size:.82rem;line-height:1.7;">
+            <strong style="color:var(--c-emerald);">Cara kerja Pemandu ini:</strong>
+            Setiap pertanyaan dicocokkan dengan knowledge base lokal (teks kurasi tentang aksara dan batik).
+            Jika relevan, jawaban dihasilkan AI dari konteks itu — dengan sumber yang bisa kamu verifikasi.
+            Jika tidak ada data yang cukup, AI akan jujur mengatakannya, bukan mengarang.
+            Pertanyaanmu dikirim ke penyedia AI (lihat konfigurasi server); tidak ada log percakapan yang disimpan.
+          </p>
+        </div>
+
+        <h2 id="chat-title" style="font-size:.01rem;color:transparent;position:absolute;">Area percakapan Pemandu Kaganga</h2>
+
+        <!-- Chip pertanyaan -->
+        <div class="chip-questions fade-up" id="chipQuestions">
+          <button class="chip quick-q" data-q="Apa itu Aksara Kaganga?">Apa itu Aksara Kaganga?</button>
+          <button class="chip quick-q" data-q="Huruf Ma yang mana?">Huruf Ma yang mana?</button>
+          <button class="chip quick-q" data-q="Bagaimana cara membaca aksara Rejang?">Cara membaca aksara?</button>
+          <button class="chip quick-q" data-q="Apa itu Batik Kaganga?">Apa itu Batik Kaganga?</button>
+          <button class="chip quick-q" data-q="Di mana Arumbatik Roemah?">Di mana Arumbatik Roemah?</button>
+          <button class="chip quick-q" data-q="Apa itu virama dalam aksara Rejang?">Apa itu virama?</button>
+          <button class="chip quick-q" data-q="Bagaimana bentuk angka dalam aksara Kaganga?">Bentuk angka Kaganga?</button>
+        </div>
+
+        <!-- Chat area -->
+        <div class="glass fade-up" style="border-radius:20px;padding:1.5rem;margin-bottom:1rem;">
+          <div id="chatMessages" class="chat-area" role="log" aria-live="polite" aria-label="Percakapan dengan Pemandu Kaganga" aria-relevant="additions">
+            <!-- Welcome message -->
+            <div class="chat-msg">
+              <div class="chat-avatar ai" aria-hidden="true">AI</div>
+              <div class="chat-bubble ai">
+                <p>Halo! Saya Pemandu Kaganga. 👋</p>
+                <p style="margin-top:.5rem;color:var(--c-text-muted);font-size:.85rem;">
+                  Saya bisa menjawab pertanyaan tentang Aksara Kaganga, Batik Kaganga, dan budaya Rejang Bengkulu —
+                  berdasarkan data yang sudah dikurasi. Dasar jawaban saya akan selalu ditampilkan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Input area -->
+          <div style="display:flex;gap:.6rem;margin-top:1rem;" id="chatInputArea">
+            <input type="text" id="chatInput" class="input-field"
+              placeholder="Tanyakan tentang aksara, batik, atau budaya Rejang…"
+              maxlength="500" autocomplete="off"
+              aria-label="Tulis pertanyaanmu tentang Aksara Kaganga"
+              style="flex:1;min-width:0;">
+            <button id="chatSend" class="send-btn" aria-label="Kirim pertanyaan">
+              <span>Kirim</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.75rem;">
+            <p style="color:var(--c-text-dim);font-size:.72rem;">
+              Dijawab AI dari data kurasi. Dasar jawaban ditampilkan di bawah setiap respons.
+            </p>
+            <button id="chatReset" style="background:none;border:none;color:var(--c-text-dim);font-size:.72rem;cursor:pointer;padding:.25rem .5rem;border-radius:6px;transition:color .2s;" aria-label="Hapus riwayat percakapan">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Status mode -->
+        <p id="chatStatus" style="text-align:center;color:var(--c-text-dim);font-size:.75rem;" aria-live="polite"></p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script type="module" src="/src/pages/pemandu-ai.js"></script>
+</body>
+</html>

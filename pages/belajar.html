@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Aksara Kaganga — DIAGA</title>
+  <meta name="description" content="Pelajari 23 huruf Aksara Kaganga, konversi teks Latin ke aksara Rejang, dan ikuti kuis adaptif untuk menghafalnya.">
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <main id="main-content">
+
+    <!-- Page hero -->
+    <div class="page-hero">
+      <p style="color:var(--c-emerald);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;margin-bottom:.75rem;">Belajar Aksara</p>
+      <h1 class="page-hero-title">Galeri & Konverter</h1>
+      <p class="page-hero-sub">23 huruf Kaganga, konverter real-time dengan rincian suku kata, dan kuis adaptif untuk melatih hafalan.</p>
+    </div>
+
+    <!-- ── Galeri Aksara ─────────────────────────────────────────────────── -->
+    <section class="section" id="galeri" aria-labelledby="galeri-title">
+      <div class="section-inner">
+        <div class="section-header fade-up">
+          <h2 class="section-title" id="galeri-title">Galeri Aksara Kaganga</h2>
+          <p class="section-sub">Klik atau tekan Enter pada setiap huruf untuk melihat detail, bunyi, dan kode Unicode-nya.</p>
+        </div>
+        <p style="text-align:center;color:var(--c-text-dim);font-size:.78rem;margin-bottom:1.5rem;font-style:italic;">
+          ⚠ Font aksara perlu diunduh. Jika muncul kotak kosong, tunggu beberapa detik atau coba refresh.
+        </p>
+        <div id="aksaraGrid" class="aksara-grid" role="list" aria-label="Galeri 23 huruf Aksara Kaganga">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Tanda vokal -->
+        <div style="margin-top:3rem;" class="fade-up">
+          <h3 style="font-family:var(--font-display);color:var(--c-gold);margin-bottom:1rem;text-align:center;font-size:1.2rem;">Tanda Vokal</h3>
+          <div id="vokalGrid" style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;"></div>
+        </div>
+
+        <!-- Tanda konsonan akhir -->
+        <div style="margin-top:2rem;" class="fade-up">
+          <h3 style="font-family:var(--font-display);color:var(--c-gold);margin-bottom:1rem;text-align:center;font-size:1.2rem;">Tanda Konsonan Akhir</h3>
+          <div id="codaGrid" style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel detail aksara (modal) -->
+    <div id="aksaraDetail" class="aksara-detail" role="dialog" aria-modal="true" aria-labelledby="detailTitle" aria-hidden="true">
+      <div class="aksara-detail-card">
+        <button class="aksara-detail-close" id="closeDetail" aria-label="Tutup detail aksara">✕</button>
+        <div id="detailGlyph" class="detail-glyph" aria-hidden="true"></div>
+        <h2 id="detailTitle" style="text-align:center;color:var(--c-gold);font-size:1.4rem;margin-bottom:.25rem;"></h2>
+        <p id="detailBunyi" style="text-align:center;color:var(--c-text-muted);font-size:.9rem;margin-bottom:1rem;"></p>
+        <div id="detailKode" style="text-align:center;font-family:monospace;color:var(--c-text-dim);font-size:.8rem;margin-bottom:1rem;"></div>
+        <p id="detailCatatan" style="color:var(--c-text-dim);font-size:.78rem;font-style:italic;text-align:center;margin-bottom:1rem;"></p>
+        <div style="display:flex;justify-content:center;gap:.75rem;">
+          <button id="detailSpeech" class="btn btn-outline" style="font-size:.76rem;padding:.5rem 1rem;">
+            🔊 Dengar (pendekatan)
+          </button>
+          <button id="detailCopy" class="btn btn-outline" style="font-size:.76rem;padding:.5rem 1rem;">
+            Salin
+          </button>
+        </div>
+        <div class="detail-nav">
+          <button id="detailPrev" class="btn btn-outline" style="font-size:.76rem;padding:.5rem 1rem;">← Sebelumnya</button>
+          <button id="detailNext" class="btn btn-outline" style="font-size:.76rem;padding:.5rem 1rem;">Berikutnya →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Konverter ──────────────────────────────────────────────────────── -->
+    <section class="section" id="konverter" aria-labelledby="konverter-title">
+      <div class="section-inner" style="max-width:700px;">
+        <div class="section-header fade-up">
+          <h2 class="section-title" id="konverter-title">Konverter Aksara</h2>
+          <p class="section-sub">Ketik teks Latin dan lihat hasil aksara Kaganga beserta rincian per suku kata.</p>
+        </div>
+
+        <div class="glass fade-up" style="border-radius:20px;padding:2rem;">
+          <div style="margin-bottom:1.25rem;">
+            <!-- Contoh cepat -->
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;">
+              <button class="chip example-chip" data-val="Bengkulu">Bengkulu</button>
+              <button class="chip example-chip" data-val="Rejang Lebong">Rejang Lebong</button>
+              <button class="chip example-chip" data-val="Kaganga">Kaganga</button>
+              <button class="chip example-chip" data-val="Curup">Curup</button>
+            </div>
+            <label for="latinInput" style="font-size:.8rem;color:var(--c-text-muted);display:block;margin-bottom:.4rem;letter-spacing:.08em;">
+              Teks Latin
+            </label>
+            <input type="text" id="latinInput" class="input-field"
+              placeholder="Ketik nama atau kata…" maxlength="100"
+              autocomplete="off" spellcheck="false"
+              aria-label="Masukkan teks Latin untuk dikonversi ke Aksara Kaganga">
+          </div>
+
+          <div style="text-align:center;color:var(--c-gold);font-size:1.5rem;margin:.75rem 0;" aria-hidden="true">⟱</div>
+
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem;">
+              <label style="font-size:.8rem;color:var(--c-text-muted);letter-spacing:.08em;">Hasil Aksara Kaganga</label>
+              <button id="copyOutput" class="btn btn-outline" style="font-size:.72rem;padding:.35rem .8rem;" aria-label="Salin hasil aksara">Salin</button>
+            </div>
+            <div id="kagangaOutput" class="glass converter-output"
+              style="border-radius:14px;padding:1.2rem;min-height:80px;"
+              aria-live="polite" aria-label="Hasil konversi aksara Kaganga">
+              <span style="color:var(--c-text-dim);font-size:1rem;font-family:var(--font-body);">Hasil akan muncul di sini…</span>
+            </div>
+          </div>
+
+          <!-- Rincian per suku kata -->
+          <div id="syllableDetail" class="syllable-detail" aria-live="polite" aria-label="Rincian per suku kata"></div>
+
+          <p style="margin-top:1.5rem;color:var(--c-text-dim);font-size:.75rem;text-align:center;font-style:italic;">
+            Transliterasi ini berbasis kaidah yang sedang divalidasi bersama narasumber.
+            Hasil perlu dikonfirmasi untuk penggunaan formal.
+          </p>
+          <p style="margin-top:.5rem;color:var(--c-text-dim);font-size:.75rem;text-align:center;">
+            Angka tidak ikut dikonversi. Lihat bentuknya di bagian <a href="#angka" style="color:var(--c-emerald);">Angka Kaganga</a>.
+          </p>
+        </div>
+
+        <!-- Font status -->
+        <p id="fontStatus" style="text-align:center;color:var(--c-text-dim);font-size:.75rem;margin-top:.75rem;" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ── Angka Kaganga ──────────────────────────────────────────────────── -->
+    <section class="section" id="angka" aria-labelledby="angka-title">
+      <div class="section-inner" style="max-width:900px;">
+        <div class="section-header fade-up">
+          <h2 class="section-title" id="angka-title">Angka Kaganga</h2>
+          <p class="section-sub">Bentuk angka 1 sampai 10 dalam aksara Kaganga. Pilih satu angka untuk melihatnya lebih besar.</p>
+        </div>
+
+        <div class="glass angka-preview fade-up">
+          <div class="angka-preview-glyph" id="angkaPreview"></div>
+          <div class="angka-preview-info">
+            <label for="angkaInput" style="font-size:.8rem;color:var(--c-text-muted);display:block;margin-bottom:.4rem;letter-spacing:.08em;">
+              Tulis angka (1–10)
+            </label>
+            <input type="text" id="angkaInput" class="input-field" inputmode="numeric"
+              maxlength="10" autocomplete="off" spellcheck="false"
+              placeholder="mis. 7 atau tujuh" aria-describedby="angkaPesan">
+            <p class="angka-nama" id="angkaNama"></p>
+            <p class="angka-bentuk" id="angkaBentuk"></p>
+            <p class="angka-pesan" id="angkaPesan" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="angka-grid fade-up" id="angkaGrid" role="group" aria-label="Daftar angka Kaganga 1 sampai 10"></div>
+
+        <p class="angka-catatan">
+          Dari gambarnya terlihat angka 1 sampai 4 berupa goresan, angka 5 berbentuk T, dan angka 6 sampai 9
+          menambahkan goresan pada bentuk T. Itu pengamatan kami, belum diverifikasi narasumber.
+          Bentuk angka di sini digambar ulang dari dokumentasi tim. Unicode tidak punya karakter angka Rejang,
+          jadi angka tidak ikut dikonversi di Konverter Aksara. Angka nol dan angka di atas 10 belum kami dokumentasikan.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Kuis Adaptif ───────────────────────────────────────────────────── -->
+    <section class="section" id="kuis" aria-labelledby="kuis-title">
+      <div class="section-inner">
+        <div class="section-header fade-up">
+          <h2 class="section-title" id="kuis-title">Kuis Aksara</h2>
+          <p class="section-sub">Latih hafalan dengan sistem Leitner — kartu yang sering salah akan lebih sering muncul.</p>
+        </div>
+
+        <div style="max-width:560px;margin:0 auto;" class="fade-up">
+          <!-- Mode selector -->
+          <div style="display:flex;gap:.6rem;justify-content:center;margin-bottom:1.5rem;flex-wrap:wrap;">
+            <button class="chip quiz-mode-btn active-mode" data-mode="bunyi-huruf" id="quizMode1">Dengar → Pilih Huruf</button>
+            <button class="chip quiz-mode-btn" data-mode="huruf-bunyi" id="quizMode2">Lihat Huruf → Pilih Bunyi</button>
+            <button class="chip quiz-mode-btn" data-mode="tulis" id="quizMode3">Lihat Aksara → Tulis Latin</button>
+          </div>
+
+          <div class="quiz-card glass">
+            <div class="quiz-progress" aria-label="Progres kuis">
+              <div class="quiz-progress-bar" id="quizProgress" style="width:0%"></div>
+            </div>
+
+            <div id="quizStats" style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--c-text-dim);margin-bottom:1.2rem;">
+              <span>Skor: <strong id="quizScore" style="color:var(--c-emerald);">0</strong></span>
+              <span>Streak: <strong id="quizStreak" style="color:var(--c-gold);">0</strong></span>
+              <span>Soal: <strong id="quizCount">0/10</strong></span>
+            </div>
+
+            <div id="quizQuestion" style="text-align:center;margin-bottom:1.5rem;min-height:80px;">
+              <div id="quizGlyph" style="font-family:var(--font-rejang);font-size:4rem;color:var(--c-gold);margin-bottom:.5rem;"></div>
+              <p id="quizPrompt" style="color:var(--c-text-muted);font-size:.9rem;"></p>
+            </div>
+
+            <div id="quizOptions" class="quiz-options" role="group" aria-label="Pilihan jawaban kuis"></div>
+
+            <div id="quizFeedback" style="margin-top:1rem;text-align:center;font-size:.85rem;min-height:24px;" aria-live="polite"></div>
+
+            <div style="display:flex;justify-content:space-between;margin-top:1.5rem;">
+              <button id="quizSkip" class="btn btn-outline" style="font-size:.76rem;padding:.5rem 1rem;">Lewati</button>
+              <button id="quizNext" class="btn btn-solid" style="font-size:.76rem;padding:.5rem 1rem;" disabled>Lanjut →</button>
+            </div>
+
+            <div id="quizWriteArea" style="display:none;margin-top:1rem;">
+              <input type="text" id="quizWriteInput" class="input-field" placeholder="Ketik transliterasi Latin…" autocomplete="off">
+              <button id="quizWriteSubmit" class="btn btn-solid" style="width:100%;margin-top:.75rem;justify-content:center;">Cek Jawaban</button>
+            </div>
+          </div>
+
+          <div style="text-align:center;margin-top:1.5rem;">
+            <button id="quizStart" class="btn btn-gold">Mulai Kuis</button>
+            <button id="quizReset" class="btn btn-outline" style="margin-left:.75rem;font-size:.76rem;">Reset Progres</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script type="module" src="/src/pages/belajar.js"></script>
+</body>
+</html>

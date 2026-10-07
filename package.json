@@ -1,0 +1,27 @@
+{
+  "name": "diaga",
+  "version": "0.1.0",
+  "description": "DIAGA � Digitalisasi Aksara Kaganga: Museum Digital Interaktif Budaya Bengkulu",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src api",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "jsdom": "^30.1.1",
+    "vite": "^5.4.0",
+    "vitest": "^2.1.0"
+  },
+  "dependencies": {
+    "@fontsource/cinzel": "^5.0.0",
+    "@fontsource/inter": "^5.0.0",
+    "@fontsource/noto-sans-rejang": "^5.3.0"
+  }
+}

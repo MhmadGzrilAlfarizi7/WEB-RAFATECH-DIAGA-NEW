@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIAGA — Digitalisasi Aksara Kaganga | Museum Digital Budaya Bengkulu</title>
+  <meta name="description" content="DIAGA adalah museum digital interaktif untuk melestarikan Aksara Kaganga — sistem tulisan tradisional Suku Rejang, Bengkulu. Pelajari aksara, konversikan teks, dan tulis namamu di batik.">
+  <meta property="og:title" content="DIAGA — Aksara Kaganga Digital">
+  <meta property="og:description" content="Pelajari Aksara Kaganga, konversi teks Latin, dan eksplorasi budaya Rejang Bengkulu.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0a0f">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="nav-container"></div>
+
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- SVG batik background -->
+  <div class="batik-bg" aria-hidden="true">
+    <svg width="100%" height="100%">
+      <defs>
+        <pattern id="batikPat" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M30 5 L35 15 L45 15 L37 22 L40 32 L30 26 L20 32 L23 22 L15 15 L25 15Z"
+            fill="none" stroke="rgba(212,168,67,0.08)" stroke-width="0.5"/>
+          <circle cx="30" cy="30" r="12" fill="none" stroke="rgba(0,232,123,0.05)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#batikPat)"/>
+    </svg>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <p class="hero-eyebrow">Museum Digital Interaktif</p>
+      <h1 class="hero-title" id="hero-title">DIAGA</h1>
+      <p class="hero-sub">
+        Aksara Kaganga — warisan tulis Suku Rejang dari Bengkulu — kini bisa kamu pelajari,
+        konversi, dan tulis sebagai batik. Semua dalam satu tempat.
+      </p>
+      <div class="hero-ctas">
+        <a href="/pages/belajar.html" class="btn btn-outline">Coba Konverter</a>
+        <a href="/pages/pemandu-ai.html" class="btn btn-solid">Tanya Pemandu AI</a>
+      </div>
+
+      <div class="prasasti" aria-hidden="true"></div>
+      <div style="position:absolute;bottom:2rem;font-size:1.5rem;color:var(--c-gold);opacity:.5;animation:fadeUp 1s ease 2s both;">↓</div>
+    </section>
+
+    <!-- ── Alur cerita 3 langkah ─────────────────────────────────────────── -->
+    <section class="section" id="alur" aria-labelledby="alur-title">
+      <div class="section-inner">
+        <div class="section-header fade-up">
+          <h2 class="section-title" id="alur-title">Alur Perjalananmu</h2>
+          <p class="section-sub">Dari belajar aksara sampai mengunjungi perajin — semuanya ada di sini.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:900px;margin:0 auto;">
+          <a href="/pages/belajar.html" class="glass bento-cell fade-up" style="text-decoration:none;display:block;">
+            <div style="font-size:2.5rem;margin-bottom:1rem;">①</div>
+            <h3 style="color:var(--c-gold);font-family:var(--font-display);margin-bottom:.5rem;">Belajar Aksara</h3>
+            <p style="color:var(--c-text-muted);font-size:.9rem;">Galeri 23 huruf Kaganga dan angka 1 sampai 10. Klik, dengar bunyinya, ikuti kuis. Konverter mengubah kata Latinmu ke aksara secara langsung.</p>
+            <span style="color:var(--c-emerald);font-size:.8rem;margin-top:1rem;display:block;">Mulai belajar →</span>
+          </a>
+          <a href="/pages/batik.html" class="glass bento-cell fade-up" style="text-decoration:none;display:block;animation-delay:.15s;">
+            <div style="font-size:2.5rem;margin-bottom:1rem;">②</div>
+            <h3 style="color:var(--c-gold);font-family:var(--font-display);margin-bottom:.5rem;">Tulis di Batik</h3>
+            <p style="color:var(--c-text-muted);font-size:.9rem;">Setelah tahu aksaranya, tulis namamu di atas motif Rafflesia prosedural. Unduh hasilnya sebagai PNG.</p>
+            <span style="color:var(--c-emerald);font-size:.8rem;margin-top:1rem;display:block;">Buat batikmu →</span>
+          </a>
+          <a href="/pages/sentra-kreatif.html" class="glass bento-cell fade-up" style="text-decoration:none;display:block;animation-delay:.3s;">
+            <div style="font-size:2.5rem;margin-bottom:1rem;">③</div>
+            <h3 style="color:var(--c-gold);font-family:var(--font-display);margin-bottom:.5rem;">Kunjungi Perajin</h3>
+            <p style="color:var(--c-text-muted);font-size:.9rem;">Temui langsung pengrajin Batik Kaganga di Arumbatik Roemah, Rejang Lebong. Belajar membatik, lihat prosesnya.</p>
+            <span style="color:var(--c-emerald);font-size:.8rem;margin-top:1rem;display:block;">Lihat sentra →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Bento fitur ────────────────────────────────────────────────────── -->
+    <section class="section" id="fitur" aria-labelledby="fitur-title">
+      <div class="section-inner">
+        <div class="section-header fade-up">
+          <h2 class="section-title" id="fitur-title">Fitur Interaktif</h2>
+          <p class="section-sub">Teknologi web modern untuk pelestarian budaya yang hidup.</p>
+        </div>
+        <div class="bento">
+          <!-- Konverter -->
+          <a href="/pages/belajar.html#konverter" class="glass bento-cell wide fade-up" style="text-decoration:none;background:linear-gradient(135deg,rgba(212,168,67,.06),rgba(0,0,0,0));">
+            <p style="color:var(--c-emerald);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;">Konverter Aksara</p>
+            <h3 style="color:var(--c-gold);font-family:var(--font-display);font-size:1.3rem;margin-bottom:.75rem;">Latin → Aksara Kaganga</h3>
+            <p style="color:var(--c-text-muted);font-size:.88rem;">Rincian per suku kata: Latin → glyph → kode Unicode. Mendukung semua tanda vokal dan konsonan akhir.</p>
+            <div style="margin-top:1rem;font-family:var(--font-rejang);font-size:2rem;color:rgba(212,168,67,.6);">ꤰꤱꤲꤳ</div>
+          </a>
+          <!-- AI -->
+          <a href="/pages/pemandu-ai.html" class="glass bento-cell fade-up" style="text-decoration:none;background:linear-gradient(135deg,rgba(0,232,123,.05),rgba(0,0,0,0));animation-delay:.1s;">
+            <p style="color:var(--c-emerald);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;">AI Berlandaskan Data</p>
+            <h3 style="color:var(--c-gold);font-family:var(--font-display);font-size:1.1rem;margin-bottom:.75rem;">Pemandu Kaganga</h3>
+            <p style="color:var(--c-text-muted);font-size:.82rem;">Dijawab dari knowledge base kurasi. Sumber ditampilkan. Tidak mengarang fakta.</p>
+          </a>
+          <!-- Kuis -->
+          <a href="/pages/belajar.html#kuis" class="glass bento-cell fade-up" style="text-decoration:none;animation-delay:.2s;">
+            <p style="color:var(--c-emerald);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;">Kuis Adaptif</p>
+            <h3 style="color:var(--c-gold);font-family:var(--font-display);font-size:1.1rem;margin-bottom:.75rem;">Latihan Menghafal</h3>
+            <p style="color:var(--c-text-muted);font-size:.82rem;">Sistem Leitner — kartu soal menyesuaikan tingkat kesalahan. Progres tersimpan di perangkatmu.</p>
+          </a>
+          <!-- Batik generator -->
+          <a href="/pages/batik.html#generator" class="glass bento-cell wide fade-up" style="text-decoration:none;animation-delay:.3s;background:linear-gradient(135deg,rgba(212,168,67,.04),rgba(0,0,0,0));">
+            <p style="color:var(--c-emerald);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem;">Generator Batik</p>
+            <h3 style="color:var(--c-gold);font-family:var(--font-display);font-size:1.3rem;margin-bottom:.75rem;">Tulis Namamu di Batik</h3>
+            <p style="color:var(--c-text-muted);font-size:.88rem;">Namamu dalam Aksara Kaganga digambar di atas motif Rafflesia prosedural buatan sendiri. Unduh sebagai PNG.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pengantar sejarah singkat ─────────────────────────────────────── -->
+    <section class="section" id="sejarah-singkat" aria-labelledby="sejarah-title">
+      <div class="section-inner" style="max-width:900px;">
+        <div class="section-header fade-up">
+          <h2 class="section-title" id="sejarah-title">Tentang Aksara Kaganga</h2>
+        </div>
+        <div class="glass" style="padding:2rem 2.5rem;border-radius:20px;" class="fade-up">
+          <p style="color:var(--c-text-muted);line-height:1.8;margin-bottom:1rem;">
+            Aksara Kaganga — atau Aksara Rejang — adalah sistem tulisan tradisional Suku Rejang dari wilayah Bengkulu, Sumatera.
+            Aksara ini termasuk keluarga aksara rumpun Nusantara dan telah dikodekan dalam standar Unicode pada blok
+            <code style="color:var(--c-gold);">U+A930–U+A95F</code>.
+          </p>
+          <p style="color:var(--c-text-muted);line-height:1.8;margin-bottom:1rem;">
+            Batik Kaganga lahir dari keinginan perajin lokal Rejang Lebong untuk menciptakan identitas tekstil yang
+            memadukan aksara kuno ini dengan motif Bunga Rafflesia Arnoldii — flora endemik terbesar di dunia — pada
+            akhir dekade 1980-an.
+          </p>
+          <p style="color:var(--c-text-dim);font-size:.8rem;">
+            Sumber: data berbasis Unicode Standard dan sumber lokal. Beberapa detail sedang diverifikasi bersama narasumber.
+            <a href="/pages/tentang.html" style="color:var(--c-emerald);">Lihat semua sumber →</a>
+          </p>
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+          <a href="/pages/batik.html" class="btn btn-outline">Sejarah Lengkap Batik Kaganga</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script type="module" src="/src/pages/index.js"></script>
+</body>
+</html>
