@@ -39,7 +39,7 @@ const GALERI_DATA = [
     posisi: 'center',
   },
   {
-    file: '/assets/images/Aksara-Rejang-4.webp',
+    file: '/assets/images/sungai-lemau-4.webp',
     alt: 'Kain batik kuning, biru tua, dan merah muda dengan motif bundar berulang dan ornamen',
     tag: 'Batik Aksara Rejang',
     judul: 'Motif bundar yang berulang',
