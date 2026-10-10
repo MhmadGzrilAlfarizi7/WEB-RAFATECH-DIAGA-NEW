@@ -14,7 +14,7 @@ const GALERI_DATA = [
   {
     file: '/assets/images/sungai-lemau-1.webp',
     alt: 'Kain batik berwarna cokelat, hijau, merah, dan biru digantung berjajar, bermotif bambu dan bunga',
-    tag: 'Batik Sungai Lemau',
+    tag: 'Batik Aksara Rejang',
     judul: 'Deretan kain berwarna-warni',
     deskripsi: 'Kain batik digantung berjajar. Motifnya bambu, bunga, dan deretan lingkaran kecil dalam warna cokelat, hijau, merah, dan biru.',
     area: 'a',
@@ -23,7 +23,7 @@ const GALERI_DATA = [
   {
     file: '/assets/images/sungai-lemau-2.webp',
     alt: 'Kain batik merah dan biru dengan motif bunga, daun, dan buah yang sama',
-    tag: 'Batik Sungai Lemau',
+    tag: 'Batik Aksara Rejang',
     judul: 'Satu motif, dua warna',
     deskripsi: 'Motif bunga, daun, dan buah yang sama dibuat dalam warna merah dan biru.',
     area: 'b',
@@ -32,16 +32,16 @@ const GALERI_DATA = [
   {
     file: '/assets/images/sungai-lemau-3.webp',
     alt: 'Kain batik biru tua dengan motif bunga, buah, dan deretan lingkaran di tepinya',
-    tag: 'Batik Sungai Lemau',
+    tag: 'Batik Aksara Rejang',
     judul: 'Biru tua bermotif bunga',
     deskripsi: 'Kain biru tua dengan motif bunga, buah, dan deretan lingkaran kecil di bagian tepi.',
     area: 'c',
     posisi: 'center',
   },
   {
-    file: '/assets/images/sungai-lemau-4.webp',
+    file: '/assets/images/Aksara-Rejang-4.webp',
     alt: 'Kain batik kuning, biru tua, dan merah muda dengan motif bundar berulang dan ornamen',
-    tag: 'Batik Sungai Lemau',
+    tag: 'Batik Aksara Rejang',
     judul: 'Motif bundar yang berulang',
     deskripsi: 'Kain kuning, biru tua, dan merah muda dengan motif bundar yang berulang serta ornamen di tepinya.',
     area: 'd',
